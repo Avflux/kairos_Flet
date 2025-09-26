@@ -15,3 +15,6 @@ env/
 
 # Temporary logs
 /tmp/ai.*.log
+
+# Patch/merge rejects
+*.rej
