@@ -5,8 +5,6 @@ class MainView(ft.View):
         super().__init__()
         self.page = page
         self.route = "/"
-        self.page.theme_mode = ft.ThemeMode.DARK
-        self.page.bgcolor = "#141218"
         self.page.padding = 10
 
         # --- State ---
