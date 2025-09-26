@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.2.5">
   <diagram name="Página-1" id="plLOUN3M6H8fUQBdUBBy">
-    <mxGraphModel dx="2023" dy="1050" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="977" dy="507" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -114,6 +114,15 @@
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="EY71eygcpZmccbt1ihIs-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" edge="1" parent="1" source="EY71eygcpZmccbt1ihIs-33" target="EY71eygcpZmccbt1ihIs-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EY71eygcpZmccbt1ihIs-33" value="Postagem Inicial" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="394" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EY71eygcpZmccbt1ihIs-34" value="Revisão" style="whiteSpace=wrap;html=1;fillColor=none;rounded=1;glass=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="389" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
