@@ -4,7 +4,7 @@ from views.login_view import LoginView
 from views.main_view import MainView
 
 def main(page: ft.Page):
-    page.title = "Controlador de Atividades"
+    page.title = "Kairos"
 
     def route_change(route):
         page.views.clear()
@@ -20,7 +20,8 @@ def main(page: ft.Page):
             top_view = page.views[-1]
             page.go(top_view.route)
         else:
-            page.window_destroy()
+            # Navigate back to the login screen when the last view is popped
+            page.go("/login")
 
     page.on_route_change = route_change
     page.on_view_pop = view_pop
