@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.2.5">
   <diagram name="Página-1" id="plLOUN3M6H8fUQBdUBBy">
-    <mxGraphModel dx="2043" dy="1050" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="2023" dy="1050" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -57,7 +57,7 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="EY71eygcpZmccbt1ihIs-19" value="Análise Retorno Cliente" style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=16.7;spacing=9;strokeColor=light-dark(#3A414A,#FFFFFF);rounded=1;absoluteArcSize=1;arcSize=9;fillColor=#unset;strokeWidth=NaN;lucidId=kN.TTYw-TDhO;labelBorderColor=none;" vertex="1" parent="1">
+        <mxCell id="EY71eygcpZmccbt1ihIs-19" value="Análise Retorno Cliente" style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=16.7;spacing=9;strokeColor=light-dark(#3A414A,#FFFFFF);rounded=1;absoluteArcSize=1;arcSize=9;fillColor=default;strokeWidth=NaN;lucidId=kN.TTYw-TDhO;labelBorderColor=none;" vertex="1" parent="1">
           <mxGeometry x="880" y="60" width="120" height="90" as="geometry" />
         </mxCell>
         <mxCell id="EY71eygcpZmccbt1ihIs-20" value="" style="html=1;jettySize=18;whiteSpace=wrap;fontSize=13;strokeColor=light-dark(#3A414A,#FFFFFF);strokeOpacity=100;strokeWidth=0.8;rounded=1;arcSize=12;edgeStyle=orthogonalEdgeStyle;startArrow=none;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;lucidId=ZN.ThPNdN~2E;labelBorderColor=none;" edge="1" parent="1" source="EY71eygcpZmccbt1ihIs-19" target="EY71eygcpZmccbt1ihIs-21">
