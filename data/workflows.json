@@ -1,0 +1,87 @@
+{
+  "default_project": {
+    "current_stage": "Postagem Inicial",
+    "stages": [
+      {
+        "name": "Postagem Inicial",
+        "status": "in_progress",
+        "description": "Initial document posting",
+        "order": 0,
+        "metadata": {}
+      },
+      {
+        "name": "Verificação",
+        "status": "pending",
+        "description": "Document verification",
+        "order": 1,
+        "metadata": {}
+      },
+      {
+        "name": "Aprovação",
+        "status": "pending",
+        "description": "Document approval",
+        "order": 2,
+        "metadata": {}
+      },
+      {
+        "name": "Emissão",
+        "status": "pending",
+        "description": "Document emission",
+        "order": 3,
+        "metadata": {}
+      },
+      {
+        "name": "Comentários Cliente",
+        "status": "pending",
+        "description": "Client comments",
+        "order": 4,
+        "metadata": {}
+      },
+      {
+        "name": "Análise Cliente",
+        "status": "pending",
+        "description": "Client analysis",
+        "order": 5,
+        "metadata": {}
+      },
+      {
+        "name": "Comentários Proprietário",
+        "status": "pending",
+        "description": "Owner comments",
+        "order": 6,
+        "metadata": {}
+      },
+      {
+        "name": "Análise Técnica",
+        "status": "pending",
+        "description": "Technical analysis",
+        "order": 7,
+        "metadata": {}
+      },
+      {
+        "name": "Revisão Aprovado",
+        "status": "pending",
+        "description": "Approved revision",
+        "order": 8,
+        "metadata": {}
+      },
+      {
+        "name": "Emissão Aprovado",
+        "status": "pending",
+        "description": "Approved emission",
+        "order": 9,
+        "metadata": {}
+      },
+      {
+        "name": "Postagem Concluída",
+        "status": "pending",
+        "description": "Completed posting",
+        "order": 10,
+        "metadata": {}
+      }
+    ],
+    "last_updated": "2025-09-27T16:36:41.361062",
+    "project_id": null,
+    "progress_percentage": 0.0
+  }
+}
