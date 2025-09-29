@@ -6,6 +6,9 @@ __pycache__/
 
 # Virtual environment
 .venv/
+.kiro/
+.idx/
+.pytest_cache/
 virtualenv/
 env/
 

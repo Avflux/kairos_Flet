@@ -1,0 +1,43 @@
+{
+  "porta_preferencial": 8080,
+  "porta_minima": 8080,
+  "porta_maxima": 8090,
+  "host": "localhost",
+  "timeout_servidor": 30,
+  
+  "diretorio_html": "web_content",
+  "diretorio_dados": "web_content/data",
+  "arquivo_index": "index.html",
+  
+  "cors_habilitado": true,
+  "cors_origens": ["*"],
+  "cors_metodos": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  "cors_cabecalhos": ["Content-Type", "Authorization"],
+  "cors_credenciais": false,
+  
+  "validar_caminhos": true,
+  "permitir_directory_listing": false,
+  "max_tamanho_upload": 10485760,
+  "tipos_arquivo_permitidos": [
+    ".html", ".css", ".js", ".json", 
+    ".png", ".jpg", ".jpeg", ".gif", ".svg", ".ico"
+  ],
+  
+  "modo_debug": false,
+  "nivel_log": "INFO",
+  "arquivo_log": null,
+  "log_formato": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+  "log_rotacao": true,
+  "log_max_bytes": 10485760,
+  "log_backup_count": 5,
+  
+  "intervalo_sincronizacao": 1.0,
+  "debounce_delay": 0.5,
+  "max_tentativas_retry": 3,
+  "delay_retry": 1.0,
+  
+  "cache_habilitado": true,
+  "cache_max_age": 3600,
+  "compressao_habilitada": true,
+  "keep_alive": true
+}

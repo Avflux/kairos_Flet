@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro de Sincronização - Servidor Web Integrado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .error-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: #f39c12;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            position: relative;
+        }
+
+        .error-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #f39c12;
+            animation: ripple 2s infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .sync-status {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .status-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: left;
+            border-left: 4px solid #f39c12;
+        }
+
+        .status-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-card p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin: 0.25rem 0;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .status-error { background: #e74c3c; }
+        .status-warning { background: #f39c12; }
+        .status-success { background: #27ae60; }
+        .status-info { background: #3498db; }
+
+        .error-details {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .error-details h3 {
+            color: #856404;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .error-log {
+            background: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 4px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            max-height: 150px;
+            overflow-y: auto;
+            margin-top: 1rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #f39c12;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+            transform: translateY(-2px);
+        }
+
+        .retry-info {
+            background: #e8f4fd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #2980b9;
+        }
+
+        .retry-progress {
+            width: 100%;
+            height: 6px;
+            background: #ecf0f1;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .retry-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+            width: 0%;
+            transition: width 0.5s ease;
+            animation: progress-pulse 2s infinite;
+        }
+
+        @keyframes progress-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #f39c12;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .error-container {
+                padding: 2rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .sync-status {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">
+            ⚡
+        </div>
+        
+        <h1 class="error-title">Erro de Sincronização</h1>
+        
+        <p class="error-message">
+            A sincronização de dados entre a aplicação e o WebView foi interrompida. 
+            Os dados podem estar desatualizados.
+        </p>
+        
+        <div class="sync-status">
+            <div class="status-card">
+                <h3>
+                    <span class="status-indicator status-error"></span>
+                    Status da Sincronização
+                </h3>
+                <p><strong>Estado:</strong> <span id="sync-state">Erro</span></p>
+                <p><strong>Última tentativa:</strong> <span id="last-attempt">--</span></p>
+                <p><strong>Próxima tentativa:</strong> <span id="next-attempt">--</span></p>
+            </div>
+            
+            <div class="status-card">
+                <h3>
+                    <span class="status-indicator status-warning"></span>
+                    Dados Locais
+                </h3>
+                <p><strong>Última atualização:</strong> <span id="last-update">--</span></p>
+                <p><strong>Versão dos dados:</strong> <span id="data-version">--</span></p>
+                <p><strong>Itens em cache:</strong> <span id="cache-items">--</span></p>
+            </div>
+        </div>
+        
+        <div class="error-details">
+            <h3>🔍 Detalhes do Erro:</h3>
+            <p id="error-description">Falha na comunicação com o sistema de sincronização.</p>
+            
+            <div class="error-log" id="error-log">
+                <div>Aguardando informações de debug...</div>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="tentarSincronizacao()">
+                <span id="sync-icon">🔄</span>
+                Sincronizar Agora
+            </button>
+            <button class="btn btn-success" onclick="ativarRetryAutomatico()">
+                <span id="retry-icon">⚙️</span>
+                Retry Automático
+            </button>
+            <button class="btn btn-secondary" onclick="limparCache()">
+                <span>🗑️</span>
+                Limpar Cache
+            </button>
+        </div>
+        
+        <div class="retry-progress" id="retry-progress" style="display: none;">
+            <div class="retry-progress-bar" id="retry-progress-bar"></div>
+        </div>
+        
+        <div class="retry-info" id="retry-info" style="display: none;">
+            <strong>Status do Retry:</strong> <span id="retry-status">Aguardando...</span>
+        </div>
+    </div>
+
+    <script>
+        let retryAtivo = false;
+        let tentativasRealizadas = 0;
+        const maxTentativas = 5;
+        let intervalId = null;
+        
+        // Simular dados iniciais
+        function inicializarDados() {
+            const agora = new Date();
+            document.getElementById('last-attempt').textContent = agora.toLocaleTimeString('pt-BR');
+            document.getElementById('last-update').textContent = 'Há 5 minutos';
+            document.getElementById('data-version').textContent = 'v1.2.3';
+            document.getElementById('cache-items').textContent = '12 itens';
+            
+            // Simular log de erro
+            const errorLog = document.getElementById('error-log');
+            errorLog.innerHTML = `
+                <div>[${agora.toLocaleTimeString()}] ERRO: Timeout na conexão com servidor de dados</div>
+                <div>[${agora.toLocaleTimeString()}] INFO: Tentando reconectar...</div>
+                <div>[${agora.toLocaleTimeString()}] ERRO: Falha na autenticação do provedor de dados</div>
+                <div>[${agora.toLocaleTimeString()}] WARN: Usando dados em cache</div>
+            `;
+        }
+        
+        function tentarSincronizacao() {
+            const syncIcon = document.getElementById('sync-icon');
+            const syncState = document.getElementById('sync-state');
+            const retryInfo = document.getElementById('retry-info');
+            const retryStatus = document.getElementById('retry-status');
+            
+            syncIcon.innerHTML = '<div class="loading"></div>';
+            syncState.textContent = 'Sincronizando...';
+            retryInfo.style.display = 'block';
+            retryStatus.textContent = 'Tentando sincronizar dados...';
+            
+            // Simular tentativa de sincronização
+            setTimeout(() => {
+                const sucesso = Math.random() > 0.3; // 70% chance de sucesso
+                
+                if (sucesso) {
+                    syncIcon.textContent = '✅';
+                    syncState.textContent = 'Sincronizado';
+                    retryStatus.textContent = 'Sincronização bem-sucedida!';
+                    
+                    // Atualizar indicadores
+                    document.querySelector('.status-error').className = 'status-indicator status-success';
+                    document.getElementById('last-update').textContent = 'Agora mesmo';
+                    
+                    setTimeout(() => {
+                        alert('Sincronização restaurada com sucesso!');
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    syncIcon.textContent = '❌';
+                    syncState.textContent = 'Falha na sincronização';
+                    retryStatus.textContent = 'Sincronização falhou. Tente novamente.';
+                    
+                    setTimeout(() => {
+                        syncIcon.textContent = '🔄';
+                    }, 3000);
+                }
+            }, 3000);
+        }
+        
+        function ativarRetryAutomatico() {
+            if (retryAtivo) {
+                pararRetryAutomatico();
+                return;
+            }
+            
+            retryAtivo = true;
+            tentativasRealizadas = 0;
+            
+            const retryIcon = document.getElementById('retry-icon');
+            const retryInfo = document.getElementById('retry-info');
+            const retryStatus = document.getElementById('retry-status');
+            const retryProgress = document.getElementById('retry-progress');
+            const retryProgressBar = document.getElementById('retry-progress-bar');
+            
+            retryIcon.innerHTML = '<div class="loading"></div>';
+            retryInfo.style.display = 'block';
+            retryProgress.style.display = 'block';
+            
+            const btn = event.target;
+            btn.textContent = 'Parar Retry';
+            btn.style.background = '#e74c3c';
+            
+            executarRetryAutomatico();
+        }
+        
+        function executarRetryAutomatico() {
+            if (!retryAtivo || tentativasRealizadas >= maxTentativas) {
+                pararRetryAutomatico();
+                return;
+            }
+            
+            tentativasRealizadas++;
+            const retryStatus = document.getElementById('retry-status');
+            const retryProgressBar = document.getElementById('retry-progress-bar');
+            
+            retryStatus.textContent = `Tentativa ${tentativasRealizadas}/${maxTentativas} - Aguardando...`;
+            
+            // Simular delay com backoff exponencial
+            const delay = Math.min(1000 * Math.pow(2, tentativasRealizadas - 1), 10000);
+            let tempoRestante = delay / 1000;
+            
+            const countdownInterval = setInterval(() => {
+                if (!retryAtivo) {
+                    clearInterval(countdownInterval);
+                    return;
+                }
+                
+                retryStatus.textContent = `Tentativa ${tentativasRealizadas}/${maxTentativas} - Próxima em ${tempoRestante}s`;
+                retryProgressBar.style.width = `${((delay/1000 - tempoRestante) / (delay/1000)) * 100}%`;
+                
+                tempoRestante--;
+                
+                if (tempoRestante < 0) {
+                    clearInterval(countdownInterval);
+                    
+                    // Simular tentativa
+                    retryStatus.textContent = `Tentativa ${tentativasRealizadas}/${maxTentativas} - Executando...`;
+                    
+                    setTimeout(() => {
+                        const sucesso = Math.random() > 0.5; // 50% chance de sucesso
+                        
+                        if (sucesso) {
+                            retryStatus.textContent = 'Retry automático bem-sucedido!';
+                            pararRetryAutomatico();
+                            setTimeout(() => {
+                                alert('Sincronização restaurada automaticamente!');
+                                window.location.reload();
+                            }, 2000);
+                        } else {
+                            retryStatus.textContent = `Tentativa ${tentativasRealizadas} falhou. Continuando...`;
+                            setTimeout(executarRetryAutomatico, 1000);
+                        }
+                    }, 2000);
+                }
+            }, 1000);
+        }
+        
+        function pararRetryAutomatico() {
+            retryAtivo = false;
+            
+            const retryIcon = document.getElementById('retry-icon');
+            const retryProgress = document.getElementById('retry-progress');
+            
+            retryIcon.textContent = '⚙️';
+            retryProgress.style.display = 'none';
+            
+            const btn = document.querySelector('.btn-success');
+            btn.innerHTML = '<span>⚙️</span> Retry Automático';
+            btn.style.background = '#27ae60';
+        }
+        
+        function limparCache() {
+            if (confirm('Tem certeza que deseja limpar o cache? Isso pode causar perda de dados não sincronizados.')) {
+                const retryInfo = document.getElementById('retry-info');
+                const retryStatus = document.getElementById('retry-status');
+                
+                retryInfo.style.display = 'block';
+                retryStatus.textContent = 'Limpando cache...';
+                
+                setTimeout(() => {
+                    document.getElementById('cache-items').textContent = '0 itens';
+                    retryStatus.textContent = 'Cache limpo com sucesso!';
+                    
+                    setTimeout(() => {
+                        retryInfo.style.display = 'none';
+                    }, 2000);
+                }, 1500);
+            }
+        }
+        
+        // Processar parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const erro = urlParams.get('erro');
+        const codigo = urlParams.get('codigo');
+        const detalhes = urlParams.get('detalhes');
+        
+        if (erro) {
+            document.getElementById('error-description').textContent = decodeURIComponent(erro);
+        }
+        
+        if (detalhes) {
+            const errorLog = document.getElementById('error-log');
+            errorLog.innerHTML = `<div>${decodeURIComponent(detalhes)}</div>`;
+        }
+        
+        // Inicializar dados
+        inicializarDados();
+        
+        // Verificação automática de recuperação
+        setInterval(() => {
+            if (document.visibilityState === 'visible' && !retryAtivo) {
+                // Simular verificação de conectividade
+                const conectado = Math.random() > 0.7; // 30% chance de recuperação
+                
+                if (conectado) {
+                    document.getElementById('sync-state').textContent = 'Recuperado';
+                    document.querySelector('.status-error').className = 'status-indicator status-success';
+                    
+                    setTimeout(() => {
+                        alert('Sincronização recuperada automaticamente!');
+                        window.location.reload();
+                    }, 1000);
+                }
+            }
+        }, 60000); // Verificar a cada minuto
+    </script>
+</body>
+</html>

@@ -6,22 +6,27 @@ from views.main_view import MainView
 
 def main(page: ft.Page):
     page.title = "Kairos"
-    # Maximize window when running as desktop app
+    
+    # Configurações de janela e zoom
     if os.getenv("KAIROS_VIEW", "WEB_BROWSER").upper() == "FLET_APP":
         try:
-            page.window_maximized = True
+            # Configurar tamanho da janela ao invés de maximizar
+            page.window_width = 1400
+            page.window_height = 900
+            page.window_center()
+            # Não maximizar para ter melhor controle do zoom
+            page.window_maximized = False
         except Exception:
             pass
+    
+    # Configurações de zoom e densidade
+    page.scroll = ft.ScrollMode.AUTO
+    page.auto_scroll = True
 
     # --- Theme initialization & toggle ---
     def apply_theme(theme_value: str):
         page.theme_mode = ft.ThemeMode.DARK if theme_value == "dark" else ft.ThemeMode.LIGHT
-        # Update the toggle icon
-        if isinstance(page.appbar, ft.AppBar):
-            icon = ft.Icons.LIGHT_MODE if theme_value == "dark" else ft.Icons.DARK_MODE
-            page.appbar.actions = [
-                ft.IconButton(icon=icon, tooltip="Alternar tema", on_click=toggle_theme)
-            ]
+        # Theme toggle is now handled by TopSidebarContainer
         page.update()
 
     def toggle_theme(e=None):
@@ -34,18 +39,9 @@ def main(page: ft.Page):
     persisted_theme = page.client_storage.get("theme") or "dark"
     apply_theme(persisted_theme)
 
-    # Global app bar with theme toggle
-    page.appbar = ft.AppBar(
-        title=ft.Text("Kairos"),
-        center_title=False,
-        actions=[
-            ft.IconButton(
-                icon=ft.Icons.LIGHT_MODE if persisted_theme == "dark" else ft.Icons.DARK_MODE,
-                tooltip="Alternar tema",
-                on_click=toggle_theme,
-            )
-        ],
-    )
+    # Remove global app bar to prevent conflict with TopSidebarContainer
+    # The theme toggle will be integrated into the TopSidebarContainer instead
+    page.appbar = None
 
     def route_change(route):
         page.views.clear()

@@ -1,0 +1,1245 @@
+[
+  {
+    "timestamp": "2025-09-28 20:41:14 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:41:14 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:41:14 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:41:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.8928050994873047,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:41:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 21.600008010864258,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:41:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 17.63176918029785,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:41:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 13.762950897216797,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:52:05 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:52:05 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:52:05 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:52:05 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.7840862274169922,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:52:05 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 16.877174377441406,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:52:05 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 13.939619064331055,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:52:05 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 16.225099563598633,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:56:09 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:56:09 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:56:09 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:56:09 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.1548995971679688,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:56:09 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 12.454748153686523,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:56:09 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 9.87863540649414,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 20:56:09 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 10.229110717773438,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 21:07:09 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 21:07:09 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 21:07:09 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 21:07:09 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.6698837280273438,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 21:07:10 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 17.454862594604492,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 21:07:10 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 13.501167297363281,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 21:07:10 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 13.203859329223633,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:16:22 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:16:22 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:16:22 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:16:22 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.5895366668701172,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:16:22 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 16.59226417541504,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:16:22 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 11.993408203125,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:16:22 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 11.733531951904297,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:37:24 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:37:24 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:37:24 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:37:24 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.451253890991211,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:37:24 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 14.497756958007812,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:37:24 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 10.990142822265625,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:37:24 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 10.920286178588867,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:43:40 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:43:40 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:43:40 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:43:40 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.4607906341552734,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:43:40 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 12.138128280639648,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:43:40 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 9.807825088500977,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-28 23:43:40 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 10.509967803955078,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:25:21 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:25:21 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:25:21 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:25:21 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.1818408966064453,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:25:21 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 13.13018798828125,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:25:21 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 11.255025863647461,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:25:21 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 9.993314743041992,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:32:14 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:32:14 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:32:14 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:32:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.7855167388916016,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:32:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 18.51511001586914,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:32:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 12.232303619384766,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:32:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 12.297630310058594,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:37:14 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:37:14 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:37:14 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:37:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.199483871459961,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:37:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 13.176441192626953,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:37:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 9.341716766357422,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 00:37:14 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 10.182380676269531,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 01:01:25 UTC",
+    "tipo_evento": "SISTEMA_INICIADO",
+    "severidade": "INFO",
+    "componente": "AuditLogger",
+    "mensagem": "Sistema de auditoria inicializado",
+    "detalhes": {
+      "diretorio_logs": "logs",
+      "rotacao_diaria": true,
+      "nivel_minimo": "INFO",
+      "buffer_size": 100
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 01:01:25 UTC",
+    "tipo_evento": "SERVIDOR_INICIADO",
+    "severidade": "INFO",
+    "componente": "WebServerManager",
+    "mensagem": "Servidor web iniciado com sucesso na porta 8080",
+    "detalhes": {
+      "porta": 8080,
+      "url": "http://localhost:8080",
+      "host": "localhost",
+      "diretorio_html": "web_content",
+      "porta_preferencial": 8080,
+      "foi_porta_alternativa": false
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 01:01:25 UTC",
+    "tipo_evento": "SYNC_INICIADA",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Gerenciador de sincronização inicializado",
+    "detalhes": {
+      "provedor_dados": "JSONDataProvider",
+      "max_tentativas": 3,
+      "delay_inicial": 1.0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 01:01:25 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 1.0805130004882812,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 01:01:25 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 12.809991836547852,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 01:01:25 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 9.740114212036133,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  },
+  {
+    "timestamp": "2025-09-29 01:01:25 UTC",
+    "tipo_evento": "SYNC_SUCESSO",
+    "severidade": "INFO",
+    "componente": "DataSyncManager",
+    "mensagem": "Sincronização bem-sucedida na tentativa 1",
+    "detalhes": {
+      "tentativa": 1,
+      "tempo_ms": 10.454654693603516,
+      "total_chaves": 7,
+      "delay_usado": 0
+    },
+    "usuario": null,
+    "sessao_id": null,
+    "ip_origem": null
+  }
+]

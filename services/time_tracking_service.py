@@ -142,7 +142,7 @@ class TimeTrackingService(TimeTrackingServiceInterface):
                         self._periodic_backup()
                 
                 consecutive_errors = 0  # Reset error count on success
-                time.sleep(1.0)  # Update every second
+                time.sleep(2.0)  # Update every 2 seconds to reduce WebView loading indicators
                 
             except Exception as e:
                 consecutive_errors += 1

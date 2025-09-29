@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro do Servidor - Servidor Web Integrado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .error-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: #ff6b6b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .error-details {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .error-details h3 {
+            color: #495057;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .error-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .error-details li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+        }
+
+        .error-details li:last-child {
+            border-bottom: none;
+        }
+
+        .error-details li::before {
+            content: "•";
+            color: #6c757d;
+            margin-right: 0.5rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+            transform: translateY(-2px);
+        }
+
+        .status-info {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #e3f2fd;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #1565c0;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .error-container {
+                padding: 2rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">
+            ⚠️
+        </div>
+        
+        <h1 class="error-title">Servidor Temporariamente Indisponível</h1>
+        
+        <p class="error-message">
+            O servidor web integrado encontrou um problema e não pode processar sua solicitação no momento.
+        </p>
+        
+        <div class="error-details">
+            <h3>Possíveis causas:</h3>
+            <ul>
+                <li>Servidor web está reiniciando</li>
+                <li>Porta de rede temporariamente ocupada</li>
+                <li>Recursos do sistema insuficientes</li>
+                <li>Problema de conectividade interna</li>
+            </ul>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="recarregarPagina()">
+                <span id="reload-icon">🔄</span>
+                Tentar Novamente
+            </button>
+            <button class="btn btn-secondary" onclick="verificarStatus()">
+                <span id="status-icon">📊</span>
+                Verificar Status
+            </button>
+        </div>
+        
+        <div class="status-info" id="status-info" style="display: none;">
+            <strong>Status:</strong> <span id="status-text">Verificando...</span>
+        </div>
+    </div>
+
+    <script>
+        let tentativasReconexao = 0;
+        const maxTentativas = 5;
+        
+        function recarregarPagina() {
+            const reloadIcon = document.getElementById('reload-icon');
+            reloadIcon.innerHTML = '<div class="loading"></div>';
+            
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        }
+        
+        function verificarStatus() {
+            const statusInfo = document.getElementById('status-info');
+            const statusText = document.getElementById('status-text');
+            const statusIcon = document.getElementById('status-icon');
+            
+            statusInfo.style.display = 'block';
+            statusText.textContent = 'Verificando conexão...';
+            statusIcon.innerHTML = '<div class="loading"></div>';
+            
+            // Simular verificação de status
+            setTimeout(() => {
+                const agora = new Date();
+                statusText.textContent = `Última verificação: ${agora.toLocaleTimeString('pt-BR')}`;
+                statusIcon.textContent = '📊';
+                
+                // Tentar reconectar automaticamente
+                if (tentativasReconexao < maxTentativas) {
+                    tentativasReconexao++;
+                    setTimeout(() => {
+                        statusText.textContent = `Tentando reconectar... (${tentativasReconexao}/${maxTentativas})`;
+                        setTimeout(recarregarPagina, 2000);
+                    }, 3000);
+                } else {
+                    statusText.textContent = 'Máximo de tentativas atingido. Tente recarregar manualmente.';
+                }
+            }, 2000);
+        }
+        
+        // Verificação automática de status a cada 30 segundos
+        setInterval(() => {
+            if (document.visibilityState === 'visible') {
+                fetch(window.location.href, { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.reload();
+                        }
+                    })
+                    .catch(() => {
+                        // Servidor ainda indisponível
+                    });
+            }
+        }, 30000);
+        
+        // Mostrar informações de debug se disponíveis
+        const urlParams = new URLSearchParams(window.location.search);
+        const erro = urlParams.get('erro');
+        const codigo = urlParams.get('codigo');
+        
+        if (erro || codigo) {
+            const detalhes = document.querySelector('.error-details ul');
+            if (erro) {
+                const li = document.createElement('li');
+                li.textContent = `Erro: ${decodeURIComponent(erro)}`;
+                detalhes.appendChild(li);
+            }
+            if (codigo) {
+                const li = document.createElement('li');
+                li.textContent = `Código: ${codigo}`;
+                detalhes.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>

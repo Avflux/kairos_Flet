@@ -1,0 +1,414 @@
+/* Estilos responsivos para diferentes breakpoints */
+
+/* Breakpoints do sistema */
+:root {
+    --breakpoint-mobile: 768px;
+    --breakpoint-tablet: 1024px;
+    --breakpoint-desktop: 1200px;
+}
+
+/* Layout base - Desktop (padrão) */
+#main-content {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.data-section.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Tablet - Layout de 2 colunas */
+@media (max-width: 1024px) {
+    #main-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+    
+    .data-section {
+        padding: var(--spacing-md);
+    }
+    
+    .data-section.full-width {
+        grid-column: 1 / -1;
+    }
+    
+    /* Ajustes no header */
+    #sync-header {
+        padding: var(--spacing-sm);
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+    
+    .sync-status,
+    .last-update {
+        font-size: var(--font-size-xs);
+    }
+    
+    /* Ajustes no time tracker */
+    #elapsed-time {
+        font-size: var(--font-size-xl);
+    }
+    
+    .time-controls {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    /* Ajustes nas notificações */
+    .notifications-summary {
+        gap: var(--spacing-sm);
+    }
+    
+    .notification-count {
+        padding: var(--spacing-sm);
+    }
+    
+    .notification-count span:first-child {
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Ajustes no fluxograma */
+    .flowchart-container {
+        height: 400px;
+    }
+    
+    /* Footer mais compacto */
+    .sidebar-status {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+}
+
+/* Mobile - Layout de 1 coluna */
+@media (max-width: 768px) {
+    #main-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+    
+    .data-section {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .data-section h2 {
+        font-size: var(--font-size-md);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    /* Header mobile */
+    #sync-header {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .sync-status {
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .last-update {
+        font-size: 10px;
+    }
+    
+    /* Time tracker mobile */
+    #time-tracker-section .time-display {
+        margin: var(--spacing-sm) 0;
+    }
+    
+    #elapsed-time {
+        font-size: var(--font-size-lg);
+        letter-spacing: 1px;
+    }
+    
+    .time-controls {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .status-badge {
+        padding: var(--spacing-xs);
+        font-size: 10px;
+    }
+    
+    #current-project {
+        text-align: center;
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Workflow mobile */
+    .progress-bar {
+        height: 8px;
+    }
+    
+    .progress-info {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+    
+    /* Notificações mobile */
+    .notifications-summary {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .notification-count {
+        padding: var(--spacing-xs);
+    }
+    
+    .notification-count span:first-child {
+        font-size: var(--font-size-md);
+    }
+    
+    .notification-count .label {
+        font-size: 10px;
+    }
+    
+    .last-notification {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Fluxograma mobile */
+    .flowchart-container {
+        height: 300px;
+    }
+    
+    /* Footer mobile */
+    #app-footer {
+        padding: var(--spacing-xs);
+        font-size: 10px;
+    }
+    
+    .sidebar-status {
+        justify-content: center;
+    }
+}
+
+/* Mobile pequeno - Ajustes extras */
+@media (max-width: 480px) {
+    :root {
+        --spacing-xs: 2px;
+        --spacing-sm: 4px;
+        --spacing-md: 8px;
+        --spacing-lg: 12px;
+        --spacing-xl: 16px;
+    }
+    
+    #main-content {
+        padding: var(--spacing-xs);
+        gap: var(--spacing-xs);
+    }
+    
+    .data-section {
+        padding: var(--spacing-sm);
+        border-radius: calc(var(--border-radius) / 2);
+    }
+    
+    .data-section h2 {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    #elapsed-time {
+        font-size: var(--font-size-md);
+    }
+    
+    .flowchart-container {
+        height: 250px;
+    }
+    
+    /* Ocultar elementos menos importantes em telas muito pequenas */
+    .last-update {
+        display: none;
+    }
+    
+    #app-footer {
+        display: none;
+    }
+}
+
+/* Orientação paisagem em mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    #main-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .data-section.full-width {
+        grid-column: 1 / -1;
+    }
+    
+    .flowchart-container {
+        height: 250px;
+    }
+    
+    #sync-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .sync-status {
+        flex-direction: row;
+    }
+}
+
+/* Ajustes para telas muito grandes */
+@media (min-width: 1400px) {
+    #main-content {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1600px;
+    }
+    
+    .data-section.full-width {
+        grid-column: 1 / -1;
+    }
+    
+    .flowchart-container {
+        height: 600px;
+    }
+}
+
+/* Ajustes para impressão */
+@media print {
+    #sync-header,
+    #app-footer {
+        display: none;
+    }
+    
+    #main-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        padding: 0;
+    }
+    
+    .data-section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .flowchart-container {
+        height: 400px;
+    }
+    
+    /* Forçar cores para impressão */
+    * {
+        color: #000 !important;
+        background: #fff !important;
+    }
+    
+    .data-section h2 {
+        color: #000 !important;
+        border-bottom-color: #000 !important;
+    }
+}
+
+/* Ajustes para modo de alto contraste */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+        --shadow-light: 0 2px 4px rgba(0,0,0,0.3);
+        --shadow-medium: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    
+    .data-section {
+        border-width: 2px;
+    }
+    
+    .progress-bar {
+        border: 1px solid var(--border-color);
+    }
+    
+    .status-badge {
+        border: 1px solid var(--border-color);
+    }
+}
+
+/* Ajustes para redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .progress-fill::after {
+        display: none;
+    }
+    
+    .sync-indicator.syncing {
+        animation: none;
+    }
+}
+
+/* Utilitários responsivos */
+.mobile-only {
+    display: none;
+}
+
+.tablet-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+    
+    .desktop-only,
+    .tablet-only {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tablet-only {
+        display: block;
+    }
+    
+    .mobile-only,
+    .desktop-only {
+        display: none;
+    }
+}
+
+@media (min-width: 1025px) {
+    .desktop-only {
+        display: block;
+    }
+    
+    .mobile-only,
+    .tablet-only {
+        display: none;
+    }
+}
+
+/* Classes de grid responsivo */
+.grid-mobile-1 { grid-template-columns: 1fr; }
+.grid-tablet-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-desktop-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-desktop-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 768px) {
+    .grid-tablet-2,
+    .grid-desktop-3,
+    .grid-desktop-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid-desktop-3,
+    .grid-desktop-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

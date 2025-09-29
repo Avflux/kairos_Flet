@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxo de Documentos - Sistema Integrado</title>
+    <style>
+        /* Forçar tema claro */
+        body {
+            background-color: #FFFFFF !important;
+            color: #212121 !important;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden !important; /* Remove barras de rolagem */
+        }
+        
+        #app-container {
+            background-color: #FFFFFF !important;
+            height: 100vh;
+            overflow: hidden !important; /* Remove barras de rolagem */
+        }
+        
+        #main-content {
+            background-color: #FFFFFF !important;
+            padding: 0; /* Remove padding para maximizar espaço */
+            height: 100vh;
+            overflow: hidden !important;
+        }
+        
+        #flowchart-section {
+            background-color: #FFFFFF !important;
+            height: 100vh;
+            overflow: hidden !important;
+        }
+        
+        #flowchart-container {
+            background-color: #FFFFFF !important;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden !important;
+        }
+        
+        .mxgraph {
+            background-color: #FFFFFF !important;
+            width: 100% !important;
+            height: 100% !important;
+            max-width: none !important;
+            max-height: none !important;
+        }
+        
+        h2 {
+            display: none !important; /* Ocultar título */
+        }
+        
+        /* Remover qualquer loading spinner */
+        .loading, .spinner {
+            display: none !important;
+        }
+        
+        /* Remover barras de rolagem completamente */
+        html, body {
+            overflow: hidden !important;
+            height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Garantir que o diagrama ocupe todo espaço */
+        svg {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="app-container">
+        <main id="main-content">
+            <section id="flowchart-section">
+                <div id="flowchart-container">
+                    <div class="mxgraph" style="max-width:100%;border:none;background:#FFFFFF;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:false,&quot;resize&quot;:false,&quot;toolbar&quot;:&quot;none&quot;,&quot;zoom&quot;:false,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\&quot; version=\&quot;28.2.5\&quot;&gt;\n  &lt;diagram name=\&quot;Página-1\&quot; id=\&quot;plLOUN3M6H8fUQBdUBBy\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1353\&quot; dy=\&quot;1503\&quot; grid=\&quot;0\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;1169\&quot; pageHeight=\&quot;827\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-49\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-33\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-48\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;65\&quot; y=\&quot;-499\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-33\&quot; value=\&quot;Postagem Inicial\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;25\&quot; y=\&quot;-453\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;MfQgQM3FMBS9YXk90TeN-14\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-43\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-48\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-43\&quot; value=\&quot;Revisão\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;225\&quot; y=\&quot;-453\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-54\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeColor=default;align=center;verticalAlign=middle;labelBackgroundColor=default;endArrow=classic;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-48\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-53\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;MfQgQM3FMBS9YXk90TeN-15\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-48\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-43\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-48\&quot; value=\&quot;Verificão\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;105\&quot; y=\&quot;-519\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-56\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;startSize=6;endSize=6;flowAnimation=0;startFillColor=#000000;snapToPoint=0;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-53\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-55\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;MfQgQM3FMBS9YXk90TeN-16\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-53\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-43\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-53\&quot; value=\&quot;Aprovação\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;225\&quot; y=\&quot;-519\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-61\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-55\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-60\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-55\&quot; value=\&quot;Emessão\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;345\&quot; y=\&quot;-519\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-62\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-60\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-43\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-64\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-60\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-63\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-60\&quot; value=\&quot;Comentários Cliente\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;465\&quot; y=\&quot;-519\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-65\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-63\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-43\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-67\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-63\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-66\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-63\&quot; value=\&quot;Análise Cliente\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;585\&quot; y=\&quot;-519\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;MfQgQM3FMBS9YXk90TeN-20\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-66\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-68\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-66\&quot; value=\&quot;Comentários Proprietário\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;705\&quot; y=\&quot;-519\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;MfQgQM3FMBS9YXk90TeN-17\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-68\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-43\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;MfQgQM3FMBS9YXk90TeN-21\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-68\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-71\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-68\&quot; value=\&quot;Análise Técnica\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;825\&quot; y=\&quot;-519\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-76\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-71\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-75\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-71\&quot; value=\&quot;Revisão Aprovado\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;945\&quot; y=\&quot;-519\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-78\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;\&quot; parent=\&quot;1\&quot; source=\&quot;EY71eygcpZmccbt1ihIs-75\&quot; target=\&quot;EY71eygcpZmccbt1ihIs-77\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-75\&quot; value=\&quot;Emissão Aprovado\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;1065\&quot; y=\&quot;-519\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;EY71eygcpZmccbt1ihIs-77\&quot; value=\&quot;Postagem Concluída\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fillColor=none;rounded=1;glass=0;rotation=0;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;1065\&quot; y=\&quot;-453\&quot; width=\&quot;80\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+    <script>
+        // Forçar tema claro após carregamento
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aguardar o diagrama carregar
+            setTimeout(function() {
+                // Forçar fundo branco em todos os elementos
+                document.body.style.backgroundColor = '#FFFFFF';
+                document.body.style.color = '#212121';
+                
+                // Remover qualquer loading spinner
+                const loadingElements = document.querySelectorAll('.loading, .spinner, [class*="loading"], [class*="spinner"]');
+                loadingElements.forEach(el => el.style.display = 'none');
+                
+                // Forçar fundo branco no SVG do diagrama
+                const svgElements = document.querySelectorAll('svg');
+                svgElements.forEach(svg => {
+                    svg.style.backgroundColor = '#FFFFFF';
+                    svg.style.width = '100%';
+                    svg.style.height = '100%';
+                });
+                
+                // Remover barras de rolagem
+                document.documentElement.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden';
+                
+                // Garantir que não há scroll
+                const containers = document.querySelectorAll('#app-container, #main-content, #flowchart-section, #flowchart-container');
+                containers.forEach(container => {
+                    container.style.overflow = 'hidden';
+                });
+                
+                console.log('Fluxograma carregado - apenas diagrama visível');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

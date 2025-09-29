@@ -1,0 +1,466 @@
+/* Estilos principais para o sistema integrado */
+
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores do tema da aplicação */
+    --primary-color: #2196F3;
+    --primary-dark: #1976D2;
+    --primary-light: #BBDEFB;
+    --secondary-color: #FF9800;
+    --success-color: #4CAF50;
+    --warning-color: #FF9800;
+    --error-color: #F44336;
+    --info-color: #2196F3;
+    
+    /* Cores de fundo */
+    --bg-primary: #FAFAFA;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F5F5F5;
+    --bg-dark: #212121;
+    
+    /* Cores de texto */
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --text-light: #BDBDBD;
+    --text-white: #FFFFFF;
+    
+    /* Bordas e sombras */
+    --border-color: #E0E0E0;
+    --border-radius: 8px;
+    --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 8px rgba(0,0,0,0.15);
+    --shadow-heavy: 0 8px 16px rgba(0,0,0,0.2);
+    
+    /* Espaçamentos */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* Tipografia */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-xxl: 32px;
+    
+    /* Transições */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Configurações globais */
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
+}
+
+/* Container principal */
+#app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header de sincronização */
+#sync-header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.sync-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.sync-indicator {
+    font-size: var(--font-size-lg);
+    transition: color var(--transition-fast);
+}
+
+.sync-indicator.online {
+    color: var(--success-color);
+}
+
+.sync-indicator.offline {
+    color: var(--error-color);
+}
+
+.sync-indicator.syncing {
+    color: var(--warning-color);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.last-update {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+}
+
+/* Conteúdo principal */
+#main-content {
+    flex: 1;
+    padding: var(--spacing-lg);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Seções de dados */
+.data-section {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+    transition: box-shadow var(--transition-normal);
+}
+
+.data-section:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+.data-section h2 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: var(--spacing-sm);
+}
+
+.data-section.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Seção Time Tracker */
+#time-tracker-section .time-display {
+    text-align: center;
+    margin: var(--spacing-lg) 0;
+}
+
+#elapsed-time {
+    font-size: var(--font-size-xxl);
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.time-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.status-badge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: calc(var(--border-radius) / 2);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.running {
+    background: var(--success-color);
+    color: var(--text-white);
+}
+
+.status-badge.paused {
+    background: var(--warning-color);
+    color: var(--text-white);
+}
+
+.status-badge.stopped {
+    background: var(--text-light);
+    color: var(--text-primary);
+}
+
+#current-project {
+    font-weight: 500;
+    color: var(--text-secondary);
+    flex: 1;
+    text-align: right;
+}
+
+/* Seção Workflow */
+#workflow-section .progress-container {
+    margin: var(--spacing-md) 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    border-radius: 6px;
+    transition: width var(--transition-normal);
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-sm);
+}
+
+#current-stage {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+#stage-counter {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Seção Notificações */
+#notifications-section .notifications-summary {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-md) 0;
+}
+
+.notification-count {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    flex: 1;
+    transition: background-color var(--transition-fast);
+}
+
+.notification-count:hover {
+    background: var(--primary-light);
+}
+
+.notification-count.unread {
+    background: var(--error-color);
+    color: var(--text-white);
+}
+
+.notification-count span:first-child {
+    display: block;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.notification-count .label {
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+.last-notification {
+    padding: var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--info-color);
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-md);
+}
+
+/* Seção Fluxograma */
+#flowchart-section {
+    min-height: 500px;
+}
+
+.flowchart-container {
+    width: 100%;
+    height: 500px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.flowchart-container .mxgraph {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+}
+
+/* Footer */
+#app-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+}
+
+.sidebar-status {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.sidebar-status span {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.sidebar-status span:last-child {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Estados de carregamento */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--primary-light);
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estados de erro */
+.error {
+    border-color: var(--error-color);
+    background: rgba(244, 67, 54, 0.05);
+}
+
+.error h2 {
+    color: var(--error-color);
+    border-bottom-color: var(--error-color);
+}
+
+/* Animações de entrada */
+.fade-in {
+    animation: fadeIn var(--transition-normal);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utilitários */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.hidden { display: none !important; }
+.visible { display: block !important; }
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+
+/* Forçar tema claro para melhor visualização do fluxograma */
+body {
+    background-color: #FFFFFF !important;
+    color: #212121 !important;
+}
+
+#app-container {
+    background-color: #FFFFFF !important;
+}
+
+#main-content {
+    background-color: #FFFFFF !important;
+}
+
+#flowchart-section {
+    background-color: #FFFFFF !important;
+}
+
+/* Tema escuro desabilitado para evitar conflitos */
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #121212;
+        --bg-secondary: #1E1E1E;
+        --bg-tertiary: #2D2D2D;
+        --text-primary: #FFFFFF;
+        --text-secondary: #AAAAAA;
+        --text-light: #666666;
+        --border-color: #333333;
+    }
+} */

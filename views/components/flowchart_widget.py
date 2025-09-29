@@ -36,55 +36,60 @@ class FlowchartWidget(ft.Container):
             self._create_fallback_component
         )
         
-        # Create the main container
+        # Create the main container - simplified
         super().__init__(
-            padding=ft.padding.all(10),
-            border_radius=8,
-            bgcolor="surface_variant",
-            border=ft.border.all(1, "outline_variant")
+            padding=ft.padding.all(8)
         )
         
         # Set content after initialization to avoid issues with _build_content
         self.content = self._build_content()
     
     def _build_content(self) -> ft.Control:
-        """Build the main content of the flowchart widget."""
-        return ft.Column([
-            ft.Row([
-                ft.Icon(ft.Icons.ACCOUNT_TREE, size=20, color="primary"),
+        """Build the main content of the flowchart widget - simplified."""
+        return ft.Container(
+            content=ft.Column([
                 ft.Text(
                     "Workflow Progress",
-                    size=16,
+                    size=14,
                     weight=ft.FontWeight.W_600,
                     color="on_surface"
-                )
-            ], spacing=8),
-            ft.Container(
-                content=self._build_flowchart(),
-                padding=ft.padding.symmetric(vertical=10)
-            )
-        ], spacing=10)
+                ),
+                self._build_flowchart()
+            ], spacing=8, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
+            padding=ft.padding.all(8)
+        )
     
     def _build_flowchart(self) -> ft.Control:
         """Build the flowchart visualization with responsive scaling."""
         if not self.workflow_state:
-            return ft.Container(
-                content=ft.Column([
-                    ft.Icon(ft.Icons.ACCOUNT_TREE_OUTLINED, size=32, color="outline"),
-                    ft.Text(
-                        "No workflow loaded",
-                        color="on_surface_variant",
-                        size=14,
-                        text_align=ft.TextAlign.CENTER
-                    )
-                ], 
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                spacing=8
-                ),
-                alignment=ft.alignment.center,
-                height=100,
-                padding=ft.padding.all(20)
-            )
+            # Tentar carregar ou criar workflow padrão
+            try:
+                # Primeiro tentar carregar se já existe
+                if not self.load_workflow("default_project"):
+                    # Se não existe, criar novo
+                    self.create_default_workflow("default_project")
+            except Exception:
+                pass
+            
+            # Se ainda não há workflow, mostrar placeholder simples
+            if not self.workflow_state:
+                return ft.Container(
+                    content=ft.Column([
+                        ft.Icon(ft.Icons.ACCOUNT_TREE_OUTLINED, size=24, color="outline"),
+                        ft.Text(
+                            "No workflow loaded",
+                            color="on_surface_variant",
+                            size=12,
+                            text_align=ft.TextAlign.CENTER
+                        )
+                    ], 
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    spacing=4
+                    ),
+                    alignment=ft.alignment.center,
+                    height=60,
+                    padding=ft.padding.all(8)
+                )
         
         # Create stage nodes with responsive sizing
         stage_nodes = []

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro de Carregamento - Servidor Web Integrado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .error-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .error-details {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .error-details h3 {
+            color: #c53030;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .error-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .error-details li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #fed7d7;
+            display: flex;
+            align-items: center;
+            color: #742a2a;
+        }
+
+        .error-details li:last-child {
+            border-bottom: none;
+        }
+
+        .error-details li::before {
+            content: "❌";
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .solutions {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .solutions h3 {
+            color: #276749;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .solutions ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .solutions li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #9ae6b4;
+            display: flex;
+            align-items: center;
+            color: #22543d;
+        }
+
+        .solutions li:last-child {
+            border-bottom: none;
+        }
+
+        .solutions li::before {
+            content: "✅";
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+            transform: translateY(-2px);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #ecf0f1;
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e74c3c, #f39c12);
+            width: 0%;
+            transition: width 0.3s ease;
+            animation: pulse-progress 2s infinite;
+        }
+
+        @keyframes pulse-progress {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .status-info {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #e8f4fd;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #2980b9;
+            display: none;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #e74c3c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .error-container {
+                padding: 2rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">
+            🚫
+        </div>
+        
+        <h1 class="error-title">Falha no Carregamento</h1>
+        
+        <p class="error-message">
+            Não foi possível carregar o conteúdo solicitado. O WebView encontrou um problema durante o carregamento da página.
+        </p>
+        
+        <div class="error-details">
+            <h3>🔍 Problemas Identificados:</h3>
+            <ul>
+                <li>Recurso web não encontrado ou inacessível</li>
+                <li>Timeout na conexão com o servidor</li>
+                <li>Erro de JavaScript na página</li>
+                <li>Problema de compatibilidade do navegador</li>
+            </ul>
+        </div>
+        
+        <div class="solutions">
+            <h3>💡 Soluções Recomendadas:</h3>
+            <ul>
+                <li>Verificar se o servidor web está funcionando</li>
+                <li>Aguardar alguns segundos e tentar novamente</li>
+                <li>Limpar cache do navegador</li>
+                <li>Verificar conectividade de rede</li>
+            </ul>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="recarregarPagina()">
+                <span id="reload-icon">🔄</span>
+                Recarregar
+            </button>
+            <button class="btn btn-success" onclick="tentarRecuperacao()">
+                <span id="recovery-icon">🔧</span>
+                Recuperação Automática
+            </button>
+            <button class="btn btn-secondary" onclick="voltarInicio()">
+                <span>🏠</span>
+                Página Inicial
+            </button>
+        </div>
+        
+        <div class="progress-bar" id="progress-bar" style="display: none;">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        
+        <div class="status-info" id="status-info">
+            <strong>Status:</strong> <span id="status-text">Aguardando ação do usuário</span>
+        </div>
+    </div>
+
+    <script>
+        let tentativasRecuperacao = 0;
+        const maxTentativasRecuperacao = 3;
+        
+        function recarregarPagina() {
+            const reloadIcon = document.getElementById('reload-icon');
+            const statusInfo = document.getElementById('status-info');
+            const statusText = document.getElementById('status-text');
+            
+            reloadIcon.innerHTML = '<div class="loading"></div>';
+            statusInfo.style.display = 'block';
+            statusText.textContent = 'Recarregando página...';
+            
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+        }
+        
+        function tentarRecuperacao() {
+            if (tentativasRecuperacao >= maxTentativasRecuperacao) {
+                alert('Máximo de tentativas de recuperação atingido. Tente recarregar manualmente.');
+                return;
+            }
+            
+            tentativasRecuperacao++;
+            
+            const recoveryIcon = document.getElementById('recovery-icon');
+            const statusInfo = document.getElementById('status-info');
+            const statusText = document.getElementById('status-text');
+            const progressBar = document.getElementById('progress-bar');
+            const progressFill = document.getElementById('progress-fill');
+            
+            recoveryIcon.innerHTML = '<div class="loading"></div>';
+            statusInfo.style.display = 'block';
+            progressBar.style.display = 'block';
+            
+            // Simular processo de recuperação
+            const etapas = [
+                'Verificando conectividade...',
+                'Testando servidor web...',
+                'Limpando cache...',
+                'Reinicializando conexão...',
+                'Finalizando recuperação...'
+            ];
+            
+            let etapaAtual = 0;
+            const intervalo = setInterval(() => {
+                if (etapaAtual < etapas.length) {
+                    statusText.textContent = etapas[etapaAtual];
+                    progressFill.style.width = `${((etapaAtual + 1) / etapas.length) * 100}%`;
+                    etapaAtual++;
+                } else {
+                    clearInterval(intervalo);
+                    statusText.textContent = `Recuperação concluída (Tentativa ${tentativasRecuperacao}/${maxTentativasRecuperacao})`;
+                    recoveryIcon.textContent = '🔧';
+                    
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                }
+            }, 1000);
+        }
+        
+        function voltarInicio() {
+            const baseUrl = window.location.origin;
+            window.location.href = baseUrl;
+        }
+        
+        // Mostrar informações de debug se disponíveis
+        const urlParams = new URLSearchParams(window.location.search);
+        const erro = urlParams.get('erro');
+        const codigo = urlParams.get('codigo');
+        const url = urlParams.get('url');
+        
+        if (erro || codigo || url) {
+            const detalhes = document.querySelector('.error-details ul');
+            
+            if (url) {
+                const li = document.createElement('li');
+                li.textContent = `URL: ${decodeURIComponent(url)}`;
+                detalhes.appendChild(li);
+            }
+            
+            if (erro) {
+                const li = document.createElement('li');
+                li.textContent = `Erro: ${decodeURIComponent(erro)}`;
+                detalhes.appendChild(li);
+            }
+            
+            if (codigo) {
+                const li = document.createElement('li');
+                li.textContent = `Código: ${codigo}`;
+                detalhes.appendChild(li);
+            }
+        }
+        
+        // Mostrar status inicial
+        document.getElementById('status-info').style.display = 'block';
+        
+        // Verificação automática de recuperação a cada 45 segundos
+        setInterval(() => {
+            if (document.visibilityState === 'visible' && tentativasRecuperacao === 0) {
+                fetch(window.location.origin, { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            document.getElementById('status-text').textContent = 'Servidor recuperado! Recarregando...';
+                            setTimeout(() => window.location.reload(), 2000);
+                        }
+                    })
+                    .catch(() => {
+                        // Servidor ainda com problemas
+                    });
+            }
+        }, 45000);
+    </script>
+</body>
+</html>

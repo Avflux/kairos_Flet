@@ -66,29 +66,31 @@ class TimeTrackerWidget(ft.Container, TimerUpdateListener):
             bgcolor='surface_variant'
         )
         
-        # Digital time display (centered in progress ring)
+        # Digital time display (centered in progress ring) - fonte melhorada
         self.time_display = ft.Text(
             "00:00:00",
-            size=16,
-            weight=ft.FontWeight.BOLD,
+            size=18,  # Tamanho aumentado
+            weight=ft.FontWeight.W_600,  # Peso melhorado
             color='on_surface',
-            text_align=ft.TextAlign.CENTER
+            text_align=ft.TextAlign.CENTER,
+            font_family="monospace"  # Fonte monoespaçada para números
         )
         
-        # Activity display
+        # Activity display - fonte melhorada
         self.activity_display = ft.Text(
             "No activity selected",
-            size=12,
+            size=13,  # Tamanho ligeiramente aumentado
+            weight=ft.FontWeight.W_400,
             color='on_surface_variant',
             max_lines=1,
             overflow=ft.TextOverflow.ELLIPSIS,
             text_align=ft.TextAlign.CENTER
         )
         
-        # Status display
+        # Status display - fonte melhorada
         self.status_display = ft.Text(
             "Stopped",
-            size=10,
+            size=11,  # Tamanho ligeiramente aumentado
             weight=ft.FontWeight.W_500,
             color='on_surface_variant',
             text_align=ft.TextAlign.CENTER
@@ -203,17 +205,13 @@ class TimeTrackerWidget(ft.Container, TimerUpdateListener):
             )
         ], width=120, height=120)
         
-        # Timer section with state indicator
+        # Timer section simplified - apenas título e tempo
         timer_section = ft.Container(
             content=ft.Column([
-                ft.Row([
-                    self.state_indicator,
-                    ft.Text("Timer", size=14, weight=ft.FontWeight.W_500)
-                ], alignment=ft.MainAxisAlignment.CENTER, spacing=8),
-                timer_stack,
-                self.activity_display
-            ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=12),
-            padding=ft.padding.all(16)
+                ft.Text("Timer", size=14, weight=ft.FontWeight.W_600, color='on_surface'),
+                self.time_display
+            ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=8),
+            padding=ft.padding.symmetric(horizontal=12, vertical=8)
         )
         
         # Modern controls section with responsive layout
@@ -239,24 +237,12 @@ class TimeTrackerWidget(ft.Container, TimerUpdateListener):
         )
         
         # Main layout with modern card styling
+        # Layout simplificado - apenas timer
         self.content = ft.Container(
-            content=ft.Column([
-                timer_section,
-                ft.Divider(height=1, color='outline_variant'),
-                controls_section,
-                ft.Divider(height=1, color='outline_variant'),
-                activity_section
-            ], spacing=0, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
-            border_radius=ft.border_radius.all(16),
-            bgcolor='surface',
-            border=ft.border.all(1, 'outline_variant'),
-            width=300,
-            shadow=ft.BoxShadow(
-                spread_radius=1,
-                blur_radius=4,
-                color='rgba(0, 0, 0, 0.1)',
-                offset=ft.Offset(0, 2)
-            )
+            content=timer_section,
+            padding=ft.padding.all(8),
+            width=None,  # Largura flexível
+            height=None  # Altura flexível
         )
     
     @throttled(min_interval=0.1)  # Throttle UI updates to max 10 FPS
@@ -505,7 +491,7 @@ class TimeTrackerWidget(ft.Container, TimerUpdateListener):
         self.is_paused = False
         self._update_ui_state()
     
-    @throttled(min_interval=0.5)  # Throttle timer ticks to 2 FPS for better performance
+    @throttled(min_interval=2.0)  # Throttle timer ticks to 0.5 FPS to reduce WebView loading indicators
     def on_timer_tick(self, elapsed_time: timedelta) -> None:
         """Called on each timer update with performance optimization."""
         self.elapsed_time = elapsed_time

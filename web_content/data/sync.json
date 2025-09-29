@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-09-28T22:01:25.974400",
+  "versao": 48,
+  "dados": {
+    "timestamp": "2025-09-28T22:01:25.941612",
+    "versao": 4,
+    "fonte": "TopSidebarContainer",
+    "time_tracker": {
+      "tempo_decorrido": 0,
+      "esta_executando": false,
+      "esta_pausado": false,
+      "projeto_atual": "",
+      "tarefa_atual": "",
+      "tempo_total_hoje": 0,
+      "meta_diaria": 28800
+    },
+    "flowchart": {
+      "progresso_workflow": 0.0,
+      "estagio_atual": "Postagem Inicial",
+      "total_estagios": 0,
+      "estagios_concluidos": 0,
+      "workflow_ativo": "",
+      "tempo_estimado_restante": 0
+    },
+    "notificacoes": {
+      "total_notificacoes": 0,
+      "notificacoes_nao_lidas": 0,
+      "ultima_notificacao": null,
+      "timestamp_ultima": null,
+      "tipos_notificacao": []
+    },
+    "sidebar": {
+      "sidebar_expandido": true,
+      "breakpoint_atual": "desktop",
+      "largura_atual": 0,
+      "altura_atual": 0,
+      "componentes_visiveis": [
+        "time_tracker",
+        "flowchart",
+        "notifications",
+        "webview"
+      ]
+    }
+  }
+}
