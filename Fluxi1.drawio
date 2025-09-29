@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
+  <diagram name="Página-1" id="3IO1Cf82fTFo7vpSCVID">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Postagem Inicial" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="136" y="8" width="176" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Verificação" style="rounded=1;arcSize=20;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="88" y="239" width="110" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Resultado" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="81" y="366" width="124" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Emissão" style="rounded=1;arcSize=20;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="51" y="563" width="86" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Comentários Cliente" style="rounded=1;arcSize=20;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="204" y="563" width="176" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Emissão Aprovado" style="rounded=1;arcSize=20;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="16" y="667" width="157" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Postagem Concluída" style="rounded=1;arcSize=20;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="8" y="771" width="173" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Revisão" style="rounded=1;arcSize=20;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="183" y="135" width="83" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Revisão" style="curved=1;startArrow=none;endArrow=block;exitX=0.18;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="99" />
+              <mxPoint x="90" y="214" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="Aprovação" style="curved=1;startArrow=none;endArrow=block;exitX=0.49;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value="Aprovado" style="curved=1;startArrow=none;endArrow=block;exitX=0.25;exitY=1;entryX=0.51;entryY=-0.01;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="95" y="526" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="Reprovado" style="curved=1;startArrow=none;endArrow=block;exitX=0.95;exitY=1;entryX=0.36;entryY=-0.01;" edge="1" parent="1" source="4" target="6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="233" y="526" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="Revisão" style="curved=1;startArrow=none;endArrow=block;exitX=0.57;exitY=-0.01;entryX=0.74;entryY=1;" edge="1" parent="1" source="6" target="2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="322" y="526" />
+              <mxPoint x="322" y="99" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.51;exitY=0.99;entryX=0.5;entryY=-0.01;" edge="1" parent="1" source="5" target="7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;" edge="1" parent="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" value="Revisão" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="2" target="9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.88;entryY=0;" edge="1" parent="1" source="9" target="3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="224" y="214" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
