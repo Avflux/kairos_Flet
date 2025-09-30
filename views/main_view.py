@@ -184,16 +184,16 @@ class MainView(ft.View):
         # --- Final Page Layout ---
         # Sidebar apenas com navegação (sem top bar)
         if self.use_enhanced_components:
-            # Use the modern sidebar's width management - muito aumentada
+            # Use the modern sidebar's width management - largura compacta
             self.animating_sidebar_container = ft.Container(
-                width=400,  # Largura muito aumentada
+                width=280,  # Largura compacta
                 animate=ft.Animation(300, "ease"),
                 content=self.sidebar_container
             )
         else:
-            # Original width for fallback - muito aumentada
+            # Original width for fallback - largura compacta
             self.animating_sidebar_container = ft.Container(
-                width=350,  # Largura muito aumentada
+                width=280,  # Largura compacta
                 animate=ft.Animation(300, "ease"),
                 content=self.sidebar_container
             )
@@ -234,7 +234,7 @@ class MainView(ft.View):
         if self.use_enhanced_components and self.modern_sidebar:
             # Enhanced sidebar handles its own toggle
             self.modern_sidebar._toggle_sidebar(e)
-            # Ajustar largura baseado no estado
+            # Ajustar largura baseado no estado - padrão de navegador web
             new_width = self.modern_sidebar.width if self.sidebar_expanded else 60
             self.animating_sidebar_container.width = new_width
             
@@ -242,11 +242,11 @@ class MainView(ft.View):
             if self.top_sidebar_container:
                 self.top_sidebar_container.update_layout(self.sidebar_expanded)
         else:
-            # Original sidebar behavior with much improved widths
+            # Original sidebar behavior with compact width
             if self.sidebar_expanded:
-                self.animating_sidebar_container.width = 400  # Largura muito expandida
+                self.animating_sidebar_container.width = 280  # Largura compacta
             else:
-                self.animating_sidebar_container.width = 60   # Largura colapsada (muito compacta)
+                self.animating_sidebar_container.width = 60   # Largura colapsada
             
             # Simple, robust loop to toggle visibility
             for text_control in self.sidebar_texts:

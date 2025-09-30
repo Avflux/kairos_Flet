@@ -547,20 +547,20 @@ class ModernSidebar(ft.Container):
     def _update_responsive_properties(self):
         """Update sidebar properties based on screen size and expansion state."""
         if layout_manager.is_mobile():
-            # Mobile: Full width when expanded, hidden when collapsed
+            # Mobile: Compact width when expanded, hidden when collapsed
             if self.expanded:
-                self.width = min(280, layout_manager.layout_manager.current_breakpoint * 0.8)
+                self.width = 240  # Largura mais compacta
                 self.padding = ft.padding.all(12)
             else:
                 self.width = 0  # Hidden on mobile when collapsed
                 self.padding = ft.padding.all(0)
         elif layout_manager.is_tablet():
-            # Tablet: Responsive width
-            self.width = 240 if self.expanded else 60
+            # Tablet: Compact width
+            self.width = 260 if self.expanded else 60  # Largura mais compacta
             self.padding = ft.padding.all(14)
         else:
-            # Desktop: Standard width
-            self.width = 280 if self.expanded else 80
+            # Desktop: Compact width
+            self.width = 280 if self.expanded else 80  # Largura mais compacta
             self.padding = ft.padding.all(16)
     
     def _on_layout_change(self, breakpoint: str, width: float) -> None:

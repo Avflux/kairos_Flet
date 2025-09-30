@@ -130,10 +130,24 @@ class TopSidebarContainer(ft.Container):
         # Check if TopBar is collapsed
         topbar_expanded = getattr(self, '_topbar_expanded', True)
         
+        # Dynamic height adjustment FIRST - before content
+        altura_expandida, altura_recolhida = self._get_optimized_heights()
+        
         if not topbar_expanded:
+            # Collapsed state - minimal height to maximize available space
+            self.height = altura_recolhida
+            self.padding = ft.padding.all(0)  # Zero padding for maximum space efficiency
             # TopBar recolhida - mostrar apenas botão de expansão
             layout = self._create_collapsed_topbar_layout()
         else:
+            # Expanded state - optimized height based on device with minimal padding
+            self.height = altura_expandida
+            # Minimal vertical padding (2px) to maximize space while maintaining usability
+            if layout_manager.is_mobile():
+                self.padding = ft.padding.symmetric(horizontal=8, vertical=2)  # 2px vertical padding
+            else:
+                self.padding = ft.padding.symmetric(horizontal=12, vertical=2)  # 2px vertical padding
+            
             # TopBar expandida - layout normal
             # Determine layout based on both sidebar state and screen size
             is_mobile = layout_manager.is_mobile()
@@ -152,31 +166,15 @@ class TopSidebarContainer(ft.Container):
                 # Desktop collapsed layout
                 layout = self._create_desktop_collapsed_layout()
         
-        # Apply clean styling without excessive borders
+        # Apply content AFTER setting height
         self.content = layout
-        
-        # Dynamic height adjustment based on expansion state using optimized heights
-        altura_expandida, altura_recolhida = self._get_optimized_heights()
-        
-        if not topbar_expanded:
-            # Collapsed state - minimal height to maximize available space
-            self.height = altura_recolhida
-            self.padding = ft.padding.all(0)  # Zero padding for maximum space efficiency
-        else:
-            # Expanded state - optimized height based on device with minimal padding
-            self.height = altura_expandida
-            # Minimal vertical padding (2px) to maximize space while maintaining usability
-            if layout_manager.is_mobile():
-                self.padding = ft.padding.symmetric(horizontal=8, vertical=2)  # 2px vertical padding
-            else:
-                self.padding = ft.padding.symmetric(horizontal=12, vertical=2)  # 2px vertical padding
         
         # Estilo completamente limpo - sem bordas ou fundos para maximizar espaço
         self.bgcolor = None  # Remove fundo
         self.border_radius = None  # Remove bordas arredondadas
         self.border = None  # Garantir que não há bordas
         
-        # Enable smooth transitions (300ms) for topbar collapse/expand
+        # Enable direct transitions (300ms) for topbar collapse/expand
         self.animate = ft.Animation(300, "ease")
     
     def _create_mobile_layout(self) -> ft.Row:
@@ -211,8 +209,8 @@ class TopSidebarContainer(ft.Container):
         right_controls.insert(1, self._create_topbar_toggle_button())
         
         theme_notifications_section = ft.Container(
-            content=ft.Row(right_controls, spacing=4, alignment=ft.MainAxisAlignment.CENTER),
-            width=110,  # Largura fixa para acomodar tema + toggle + notificações
+            content=ft.Row(right_controls, spacing=6, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
+            width=120,  # Largura fixa para acomodar tema + toggle + notificações
             alignment=ft.alignment.center,
             padding=ft.padding.symmetric(horizontal=2, vertical=1)
         )
@@ -263,7 +261,7 @@ class TopSidebarContainer(ft.Container):
         right_controls.insert(1, self._create_topbar_toggle_button())
         
         theme_notifications_section = ft.Container(
-            content=ft.Row(right_controls, spacing=6, alignment=ft.MainAxisAlignment.CENTER),
+            content=ft.Row(right_controls, spacing=6, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
             width=130,  # Largura aumentada para acomodar toggle do TopBar
             alignment=ft.alignment.center,
             padding=ft.padding.symmetric(horizontal=4, vertical=2)
@@ -313,8 +311,8 @@ class TopSidebarContainer(ft.Container):
                 self._create_theme_toggle_button(),
                 self.notifications,
                 self._create_topbar_toggle_button()
-            ], spacing=4, alignment=ft.MainAxisAlignment.CENTER),
-            width=120,  # Largura ajustada para tema + notificações + toggle
+            ], spacing=6, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
+            width=130,  # Largura ajustada para tema + notificações + toggle
             padding=ft.padding.symmetric(horizontal=8, vertical=4),
             alignment=ft.alignment.center_right
         )
@@ -361,8 +359,8 @@ class TopSidebarContainer(ft.Container):
                 self._create_theme_toggle_button(),
                 self.notifications,
                 self._create_topbar_toggle_button()
-            ], spacing=4, alignment=ft.MainAxisAlignment.CENTER),
-            width=110,  # Largura otimizada para incluir toggle do TopBar
+            ], spacing=6, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
+            width=120,  # Largura otimizada para incluir toggle do TopBar
             alignment=ft.alignment.center,
             padding=ft.padding.symmetric(horizontal=4, vertical=2)
         )
@@ -402,7 +400,7 @@ class TopSidebarContainer(ft.Container):
             height=altura_recolhida,  # Altura otimizada baseada no dispositivo
             bgcolor=ft.Colors.with_opacity(0.05, ft.Colors.ON_SURFACE_VARIANT),
             border_radius=ft.border_radius.only(bottom_left=8, bottom_right=8),
-            animate=ft.Animation(300, "ease")  # Animação suave de 300ms
+            animate=ft.Animation(300, "ease")  # Animação direta de 300ms
         )
     
     def _create_compact_time_tracker(self) -> ft.Control:
@@ -537,19 +535,19 @@ class TopSidebarContainer(ft.Container):
         Retorna alturas otimizadas (expandida, recolhida) baseadas no dispositivo.
         
         Implementa detecção de dispositivo para otimizar alturas da TopBar:
-        - Mobile: 40px expandida, 28px recolhida (máximo compacto)
-        - Tablet: 41px expandida, 30px recolhida (intermediário)
-        - Desktop: 42px expandida, 32px recolhida (padrão otimizado)
+        - Mobile: 35px expandida, 24px recolhida (máximo compacto)
+        - Tablet: 38px expandida, 26px recolhida (intermediário)
+        - Desktop: 40px expandida, 28px recolhida (padrão otimizado)
         
         Returns:
             tuple[int, int]: (altura_expandida, altura_recolhida)
         """
         if layout_manager.is_mobile():
-            return (40, 28)  # Mobile: mais compacto para maximizar espaço
+            return (35, 24)  # Mobile: mais compacto para maximizar espaço
         elif layout_manager.is_tablet():
-            return (41, 30)  # Tablet: intermediário
+            return (38, 26)  # Tablet: intermediário
         else:
-            return (42, 32)  # Desktop: padrão otimizado
+            return (40, 28)  # Desktop: padrão otimizado
     
     def _create_topbar_toggle_button(self) -> ft.Control:
         """Create a toggle button for TopBar collapse/expand."""
@@ -617,14 +615,22 @@ class TopSidebarContainer(ft.Container):
         self.toggle_webview_expansion()
     
     def _on_topbar_toggle_click(self, e):
-        """Handle TopBar toggle button click."""
+        """Handle TopBar toggle button click with direct animation."""
         # Alternar estado
         self._topbar_expanded = not self._topbar_expanded
         
-        # Reconstruir layout com novo estado
+        # Aplicar animação direta de altura ANTES de reconstruir
+        altura_expandida, altura_recolhida = self._get_optimized_heights()
+        nova_altura = altura_expandida if self._topbar_expanded else altura_recolhida
+        
+        # Configurar animação direta
+        self.animate = ft.Animation(300, "ease")
+        self.height = nova_altura
+        
+        # Reconstruir layout APÓS definir altura
         self._build_layout()
         
-        # Atualizar página
+        # Forçar atualização da página para aplicar animação
         if self.page:
             self.page.update()
         
@@ -761,14 +767,22 @@ class TopSidebarContainer(ft.Container):
             self.page.update()
     
     def toggle_topbar_expansion(self):
-        """Toggle TopBar expansion state to gain more area below."""
+        """Toggle TopBar expansion state to gain more area below with direct animation."""
         # Alternar estado
         self._topbar_expanded = not self._topbar_expanded
         
-        # Reconstruir layout com novo estado
+        # Aplicar animação direta de altura ANTES de reconstruir
+        altura_expandida, altura_recolhida = self._get_optimized_heights()
+        nova_altura = altura_expandida if self._topbar_expanded else altura_recolhida
+        
+        # Configurar animação direta
+        self.animate = ft.Animation(300, "ease")
+        self.height = nova_altura
+        
+        # Reconstruir layout APÓS definir altura
         self._build_layout()
         
-        # Atualizar página
+        # Forçar atualização da página para aplicar animação
         if self.page:
             self.page.update()
         

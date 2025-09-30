@@ -202,7 +202,7 @@ class WebViewComponent(ft.Container):
     
     def _configurar_layout(self) -> None:
         """Configura o layout do componente com referências diretas aos containers."""
-        # Criar container de carregamento com referência direta
+        # Criar container de carregamento com referência direta (OCULTO)
         self._container_carregamento = ft.Container(
             content=ft.Column(
                 controls=[
@@ -218,7 +218,7 @@ class WebViewComponent(ft.Container):
                 spacing=8
             ),
             alignment=ft.alignment.center,
-            visible=True  # Inicialmente visível
+            visible=False  # OCULTO - não mostra o indicador de carregamento
         )
         
         # Stack para sobrepor componentes
@@ -246,9 +246,9 @@ class WebViewComponent(ft.Container):
         self._carregando = True
         self._erro_atual = None
         
-        # Mostrar indicador de carregamento usando referência direta
+        # NÃO mostrar indicador de carregamento - manter oculto
         if hasattr(self, '_container_carregamento') and self._container_carregamento:
-            self._container_carregamento.visible = True
+            self._container_carregamento.visible = False  # SEMPRE OCULTO
         
         # Esconder container de erro
         if self._container_erro:
@@ -377,9 +377,9 @@ class WebViewComponent(ft.Container):
             if self._container_erro:
                 self._container_erro.visible = False
             
-            # Mostrar indicador de carregamento usando referência direta
+            # NÃO mostrar indicador de carregamento - manter oculto
             if hasattr(self, '_container_carregamento') and self._container_carregamento:
-                self._container_carregamento.visible = True
+                self._container_carregamento.visible = False  # SEMPRE OCULTO
             
             # Recarregar WebView
             self._webview.url = self._url_servidor
